@@ -1,0 +1,12 @@
+L:XG$main$0$0:8048
+L:XG$Delay$0$0:8055
+L:XG$GPIO_DeInit$0$0:8068
+L:XG$GPIO_Init$0$0:80EF
+L:XG$GPIO_Write$0$0:80F5
+L:XG$GPIO_WriteHigh$0$0:80FC
+L:XG$GPIO_WriteLow$0$0:810A
+L:XG$GPIO_WriteReverse$0$0:8111
+L:XG$GPIO_ReadOutputData$0$0:8115
+L:XG$GPIO_ReadInputData$0$0:811A
+L:XG$GPIO_ReadInputPin$0$0:8121
+L:XG$GPIO_ExternalPullUpConfig$0$0:8141

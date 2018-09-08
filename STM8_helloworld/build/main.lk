@@ -1,0 +1,14 @@
+-muwx
+-E ./build/main.elf
+-Y
+-y
+-b HOME = 0x8000
+-b DATA = 0x0001
+-b SSEG = 0xffffffff
+-k /usr/bin/../share/sdcc/lib/stm8
+-k /usr/share/sdcc/lib/stm8
+-l stm8
+./build/main.rel
+./build/stm8s_gpio.rel
+
+-e

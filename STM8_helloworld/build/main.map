@@ -1,0 +1,572 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     FFFFFFFF  s_SSEG                          
+     00000000  .__.ABS.                           stm8s_gpio
+     00000000  l_CABS                          
+     00000000  l_DABS                          
+     00000000  l_DATA                          
+     00000000  l_INITIALIZED                   
+     00000000  l_INITIALIZER                   
+     00000000  l__CODE                         
+     00000000  s_.debug_abbrev                 
+     00000000  s_.debug_frame                  
+     00000000  s_.debug_info                   
+     00000000  s_.debug_line                   
+     00000000  s_.debug_loc                    
+     00000000  s_.debug_pubnames               
+     00000000  s_CABS                          
+     00000000  s_DABS                          
+     00000000  s__CODE                         
+     00000001  l_SSEG                          
+     00000001  s_DATA                          
+     00000001  s_INITIALIZED                   
+     00000003  l_GSFINAL                       
+     00000007  l_HOME                          
+     0000001A  l_GSINIT                        
+     000000ED  l_.debug_abbrev                 
+     00000102  l_.debug_pubnames               
+     0000011E  l_CODE                          
+     00000240  l_.debug_loc                    
+     000002B0  l_.debug_frame                  
+     00000352  l_.debug_line                   
+     0000048F  l_.debug_info                   
+     00008000  s_HOME                          
+     00008007  s_GSINIT                        
+     00008021  s_GSFINAL                       
+     00008024  s_CODE                          
+     00008142  s_INITIALIZER                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                FFFFFFFF    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00008000    00000007 =           7. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  A$main$39                          main
+     00008004  A$main$74                          main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT                              00008007    0000001A =          26. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008007  A$main$50                          main
+     0000800A  A$main$51                          main
+     0000800C  A$main$53                          main
+     00008010  A$main$54                          main
+     00008011  A$main$55                          main
+     00008013  A$main$57                          main
+     00008016  A$main$58                          main
+     00008018  A$main$60                          main
+     0000801B  A$main$61                          main
+     0000801E  A$main$62                          main
+     0000801F  A$main$63                          main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             00008021    00000003 =           3. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008021  A$main$67                          main
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                00008024    0000011E =         286. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008024  A$main$93                          main
+     00008024  Smain$main$0                       main
+     00008024  Smain$main$1                       main
+     00008024  Smain$main$2                       main
+     00008024  _main                              main
+     00008026  A$main$96                          main
+     00008026  Smain$main$3                       main
+     00008028  A$main$99                          main
+     00008028  Smain$main$4                       main
+     0000802A  A$main$101                         main
+     0000802A  Smain$main$5                       main
+     0000802C  A$main$104                         main
+     0000802C  Smain$main$6                       main
+     0000802F  A$main$105                         main
+     00008031  A$main$115                         main
+     00008031  Smain$main$10                      main
+     00008031  Smain$main$7                       main
+     00008031  Smain$main$8                       main
+     00008031  Smain$main$9                       main
+     00008033  A$main$118                         main
+     00008033  Smain$main$11                      main
+     00008035  A$main$120                         main
+     00008035  Smain$main$12                      main
+     00008037  A$main$123                         main
+     00008037  Smain$main$13                      main
+     0000803A  A$main$124                         main
+     0000803C  A$main$129                         main
+     0000803C  Smain$main$14                      main
+     0000803C  Smain$main$15                      main
+     0000803E  A$main$131                         main
+     0000803E  Smain$main$16                      main
+     00008040  A$main$134                         main
+     00008040  Smain$main$17                      main
+     00008043  A$main$135                         main
+     00008045  A$main$139                         main
+     00008045  Smain$main$18                      main
+     00008045  Smain$main$19                      main
+     00008048  A$main$147                         main
+     00008048  Smain$main$20                      main
+     00008048  Smain$main$21                      main
+     00008048  XG$main$0$0                        main
+     00008049  A$main$162                         main
+     00008049  Smain$Delay$23                     main
+     00008049  Smain$Delay$24                     main
+     00008049  Smain$Delay$25                     main
+     00008049  Smain$main$22                      main
+     00008049  _Delay                             main
+     0000804B  A$main$166                         main
+     0000804C  A$main$167                         main
+     0000804E  A$main$168                         main
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                00008024    0000011E =         286. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008051  A$main$174                         main
+     00008051  Smain$Delay$26                     main
+     00008051  Smain$Delay$27                     main
+     00008052  A$main$177                         main
+     00008052  Smain$Delay$28                     main
+     00008055  A$main$185                         main
+     00008055  Smain$Delay$29                     main
+     00008055  Smain$Delay$30                     main
+     00008055  XG$Delay$0$0                       main
+     00008056  A$stm8s_gpio$62                    stm8s_gpio
+     00008056  Smain$Delay$31                     main
+     00008056  Sstm8s_gpio$GPIO_DeInit$0          stm8s_gpio
+     00008056  Sstm8s_gpio$GPIO_DeInit$1          stm8s_gpio
+     00008056  Sstm8s_gpio$GPIO_DeInit$2          stm8s_gpio
+     00008056  _GPIO_DeInit                       stm8s_gpio
+     00008058  A$stm8s_gpio$64                    stm8s_gpio
+     0000805A  A$stm8s_gpio$68                    stm8s_gpio
+     0000805A  Sstm8s_gpio$GPIO_DeInit$3          stm8s_gpio
+     0000805B  A$stm8s_gpio$69                    stm8s_gpio
+     0000805C  A$stm8s_gpio$70                    stm8s_gpio
+     0000805D  A$stm8s_gpio$72                    stm8s_gpio
+     0000805E  A$stm8s_gpio$76                    stm8s_gpio
+     0000805E  Sstm8s_gpio$GPIO_DeInit$4          stm8s_gpio
+     0000805F  A$stm8s_gpio$77                    stm8s_gpio
+     00008062  A$stm8s_gpio$79                    stm8s_gpio
+     00008063  A$stm8s_gpio$83                    stm8s_gpio
+     00008063  Sstm8s_gpio$GPIO_DeInit$5          stm8s_gpio
+     00008064  A$stm8s_gpio$84                    stm8s_gpio
+     00008067  A$stm8s_gpio$86                    stm8s_gpio
+     00008068  A$stm8s_gpio$94                    stm8s_gpio
+     00008068  Sstm8s_gpio$GPIO_DeInit$6          stm8s_gpio
+     00008068  Sstm8s_gpio$GPIO_DeInit$7          stm8s_gpio
+     00008068  XG$GPIO_DeInit$0$0                 stm8s_gpio
+     00008069  A$stm8s_gpio$106                   stm8s_gpio
+     00008069  Sstm8s_gpio$GPIO_DeInit$8          stm8s_gpio
+     00008069  Sstm8s_gpio$GPIO_Init$10           stm8s_gpio
+     00008069  Sstm8s_gpio$GPIO_Init$9            stm8s_gpio
+     00008069  _GPIO_Init                         stm8s_gpio
+     0000806B  A$stm8s_gpio$111                   stm8s_gpio
+     0000806B  Sstm8s_gpio$GPIO_Init$11           stm8s_gpio
+     0000806B  Sstm8s_gpio$GPIO_Init$12           stm8s_gpio
+     0000806D  A$stm8s_gpio$113                   stm8s_gpio
+     0000806E  A$stm8s_gpio$114                   stm8s_gpio
+     00008071  A$stm8s_gpio$115                   stm8s_gpio
+     00008073  A$stm8s_gpio$117                   stm8s_gpio
+     00008075  A$stm8s_gpio$118                   stm8s_gpio
+     00008076  A$stm8s_gpio$120                   stm8s_gpio
+     00008077  A$stm8s_gpio$122                   stm8s_gpio
+     00008077  Sstm8s_gpio$GPIO_Init$13           stm8s_gpio
+     00008079  A$stm8s_gpio$123                   stm8s_gpio
+     0000807A  A$stm8s_gpio$124                   stm8s_gpio
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                00008024    0000011E =         286. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000807C  A$stm8s_gpio$125                   stm8s_gpio
+     0000807D  A$stm8s_gpio$128                   stm8s_gpio
+     0000807D  Sstm8s_gpio$GPIO_Init$14           stm8s_gpio
+     0000807F  A$stm8s_gpio$130                   stm8s_gpio
+     00008081  A$stm8s_gpio$131                   stm8s_gpio
+     00008082  A$stm8s_gpio$135                   stm8s_gpio
+     00008082  Sstm8s_gpio$GPIO_Init$15           stm8s_gpio
+     00008083  A$stm8s_gpio$136                   stm8s_gpio
+     00008084  A$stm8s_gpio$137                   stm8s_gpio
+     00008085  A$stm8s_gpio$138                   stm8s_gpio
+     00008087  A$stm8s_gpio$142                   stm8s_gpio
+     00008087  Sstm8s_gpio$GPIO_Init$16           stm8s_gpio
+     00008089  A$stm8s_gpio$143                   stm8s_gpio
+     0000808B  A$stm8s_gpio$144                   stm8s_gpio
+     0000808E  A$stm8s_gpio$150                   stm8s_gpio
+     0000808E  Sstm8s_gpio$GPIO_Init$17           stm8s_gpio
+     00008090  A$stm8s_gpio$155                   stm8s_gpio
+     00008090  Sstm8s_gpio$GPIO_Init$18           stm8s_gpio
+     00008090  Sstm8s_gpio$GPIO_Init$19           stm8s_gpio
+     00008091  A$stm8s_gpio$157                   stm8s_gpio
+     00008091  Sstm8s_gpio$GPIO_Init$20           stm8s_gpio
+     00008093  A$stm8s_gpio$158                   stm8s_gpio
+     00008095  A$stm8s_gpio$159                   stm8s_gpio
+     00008096  A$stm8s_gpio$161                   stm8s_gpio
+     00008096  Sstm8s_gpio$GPIO_Init$21           stm8s_gpio
+     00008098  A$stm8s_gpio$162                   stm8s_gpio
+     0000809B  A$stm8s_gpio$169                   stm8s_gpio
+     0000809B  Sstm8s_gpio$GPIO_Init$22           stm8s_gpio
+     0000809B  Sstm8s_gpio$GPIO_Init$23           stm8s_gpio
+     0000809D  A$stm8s_gpio$171                   stm8s_gpio
+     0000809F  A$stm8s_gpio$174                   stm8s_gpio
+     0000809F  Sstm8s_gpio$GPIO_Init$24           stm8s_gpio
+     000080A2  A$stm8s_gpio$181                   stm8s_gpio
+     000080A2  Sstm8s_gpio$GPIO_Init$25           stm8s_gpio
+     000080A2  Sstm8s_gpio$GPIO_Init$26           stm8s_gpio
+     000080A4  A$stm8s_gpio$183                   stm8s_gpio
+     000080A6  A$stm8s_gpio$190                   stm8s_gpio
+     000080A6  Sstm8s_gpio$GPIO_Init$27           stm8s_gpio
+     000080A6  Sstm8s_gpio$GPIO_Init$28           stm8s_gpio
+     000080A8  A$stm8s_gpio$191                   stm8s_gpio
+     000080A9  A$stm8s_gpio$193                   stm8s_gpio
+     000080AB  A$stm8s_gpio$195                   stm8s_gpio
+     000080AD  A$stm8s_gpio$196                   stm8s_gpio
+     000080AE  A$stm8s_gpio$199                   stm8s_gpio
+     000080AE  Sstm8s_gpio$GPIO_Init$29           stm8s_gpio
+     000080B1  A$stm8s_gpio$206                   stm8s_gpio
+     000080B1  Sstm8s_gpio$GPIO_Init$30           stm8s_gpio
+     000080B1  Sstm8s_gpio$GPIO_Init$31           stm8s_gpio
+     000080B3  A$stm8s_gpio$207                   stm8s_gpio
+     000080B4  A$stm8s_gpio$209                   stm8s_gpio
+     000080B6  A$stm8s_gpio$211                   stm8s_gpio
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                00008024    0000011E =         286. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000080B8  A$stm8s_gpio$212                   stm8s_gpio
+     000080B9  A$stm8s_gpio$219                   stm8s_gpio
+     000080B9  Sstm8s_gpio$GPIO_Init$32           stm8s_gpio
+     000080B9  Sstm8s_gpio$GPIO_Init$33           stm8s_gpio
+     000080BA  A$stm8s_gpio$220                   stm8s_gpio
+     000080BD  A$stm8s_gpio$222                   stm8s_gpio
+     000080BE  A$stm8s_gpio$226                   stm8s_gpio
+     000080BE  Sstm8s_gpio$GPIO_Init$34           stm8s_gpio
+     000080BF  A$stm8s_gpio$228                   stm8s_gpio
+     000080BF  Sstm8s_gpio$GPIO_Init$35           stm8s_gpio
+     000080C1  A$stm8s_gpio$229                   stm8s_gpio
+     000080C3  A$stm8s_gpio$230                   stm8s_gpio
+     000080C4  A$stm8s_gpio$232                   stm8s_gpio
+     000080C4  Sstm8s_gpio$GPIO_Init$36           stm8s_gpio
+     000080C6  A$stm8s_gpio$233                   stm8s_gpio
+     000080C9  A$stm8s_gpio$240                   stm8s_gpio
+     000080C9  Sstm8s_gpio$GPIO_Init$37           stm8s_gpio
+     000080C9  Sstm8s_gpio$GPIO_Init$38           stm8s_gpio
+     000080CB  A$stm8s_gpio$242                   stm8s_gpio
+     000080CC  A$stm8s_gpio$245                   stm8s_gpio
+     000080CC  Sstm8s_gpio$GPIO_Init$39           stm8s_gpio
+     000080CF  A$stm8s_gpio$252                   stm8s_gpio
+     000080CF  Sstm8s_gpio$GPIO_Init$40           stm8s_gpio
+     000080CF  Sstm8s_gpio$GPIO_Init$41           stm8s_gpio
+     000080D1  A$stm8s_gpio$254                   stm8s_gpio
+     000080D2  A$stm8s_gpio$261                   stm8s_gpio
+     000080D2  Sstm8s_gpio$GPIO_Init$42           stm8s_gpio
+     000080D2  Sstm8s_gpio$GPIO_Init$43           stm8s_gpio
+     000080D4  A$stm8s_gpio$262                   stm8s_gpio
+     000080D5  A$stm8s_gpio$266                   stm8s_gpio
+     000080D5  Sstm8s_gpio$GPIO_Init$44           stm8s_gpio
+     000080D6  A$stm8s_gpio$268                   stm8s_gpio
+     000080D6  Sstm8s_gpio$GPIO_Init$45           stm8s_gpio
+     000080D8  A$stm8s_gpio$269                   stm8s_gpio
+     000080DA  A$stm8s_gpio$270                   stm8s_gpio
+     000080DB  A$stm8s_gpio$272                   stm8s_gpio
+     000080DB  Sstm8s_gpio$GPIO_Init$46           stm8s_gpio
+     000080DD  A$stm8s_gpio$273                   stm8s_gpio
+     000080E0  A$stm8s_gpio$280                   stm8s_gpio
+     000080E0  Sstm8s_gpio$GPIO_Init$47           stm8s_gpio
+     000080E0  Sstm8s_gpio$GPIO_Init$48           stm8s_gpio
+     000080E2  A$stm8s_gpio$282                   stm8s_gpio
+     000080E4  A$stm8s_gpio$283                   stm8s_gpio
+     000080E5  A$stm8s_gpio$286                   stm8s_gpio
+     000080E5  Sstm8s_gpio$GPIO_Init$49           stm8s_gpio
+     000080E8  A$stm8s_gpio$293                   stm8s_gpio
+     000080E8  Sstm8s_gpio$GPIO_Init$50           stm8s_gpio
+     000080E8  Sstm8s_gpio$GPIO_Init$51           stm8s_gpio
+     000080EA  A$stm8s_gpio$295                   stm8s_gpio
+     000080EC  A$stm8s_gpio$296                   stm8s_gpio
+     000080ED  A$stm8s_gpio$303                   stm8s_gpio
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                00008024    0000011E =         286. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000080ED  Sstm8s_gpio$GPIO_Init$52           stm8s_gpio
+     000080ED  Sstm8s_gpio$GPIO_Init$53           stm8s_gpio
+     000080EF  A$stm8s_gpio$307                   stm8s_gpio
+     000080EF  Sstm8s_gpio$GPIO_Init$54           stm8s_gpio
+     000080EF  Sstm8s_gpio$GPIO_Init$55           stm8s_gpio
+     000080EF  XG$GPIO_Init$0$0                   stm8s_gpio
+     000080F0  A$stm8s_gpio$322                   stm8s_gpio
+     000080F0  Sstm8s_gpio$GPIO_Init$56           stm8s_gpio
+     000080F0  Sstm8s_gpio$GPIO_Write$57          stm8s_gpio
+     000080F0  Sstm8s_gpio$GPIO_Write$58          stm8s_gpio
+     000080F0  Sstm8s_gpio$GPIO_Write$59          stm8s_gpio
+     000080F0  _GPIO_Write                        stm8s_gpio
+     000080F2  A$stm8s_gpio$324                   stm8s_gpio
+     000080F4  A$stm8s_gpio$325                   stm8s_gpio
+     000080F5  A$stm8s_gpio$333                   stm8s_gpio
+     000080F5  Sstm8s_gpio$GPIO_Write$60          stm8s_gpio
+     000080F5  Sstm8s_gpio$GPIO_Write$61          stm8s_gpio
+     000080F5  XG$GPIO_Write$0$0                  stm8s_gpio
+     000080F6  A$stm8s_gpio$348                   stm8s_gpio
+     000080F6  Sstm8s_gpio$GPIO_Write$62          stm8s_gpio
+     000080F6  Sstm8s_gpio$GPIO_WriteHigh$63      stm8s_gpio
+     000080F6  Sstm8s_gpio$GPIO_WriteHigh$64      stm8s_gpio
+     000080F6  Sstm8s_gpio$GPIO_WriteHigh$65      stm8s_gpio
+     000080F6  _GPIO_WriteHigh                    stm8s_gpio
+     000080F8  A$stm8s_gpio$350                   stm8s_gpio
+     000080F9  A$stm8s_gpio$352                   stm8s_gpio
+     000080FB  A$stm8s_gpio$354                   stm8s_gpio
+     000080FC  A$stm8s_gpio$362                   stm8s_gpio
+     000080FC  Sstm8s_gpio$GPIO_WriteHigh$66      stm8s_gpio
+     000080FC  Sstm8s_gpio$GPIO_WriteHigh$67      stm8s_gpio
+     000080FC  XG$GPIO_WriteHigh$0$0              stm8s_gpio
+     000080FD  A$stm8s_gpio$374                   stm8s_gpio
+     000080FD  Sstm8s_gpio$GPIO_WriteHigh$68      stm8s_gpio
+     000080FD  Sstm8s_gpio$GPIO_WriteLow$69       stm8s_gpio
+     000080FD  Sstm8s_gpio$GPIO_WriteLow$70       stm8s_gpio
+     000080FD  _GPIO_WriteLow                     stm8s_gpio
+     000080FE  A$stm8s_gpio$379                   stm8s_gpio
+     000080FE  Sstm8s_gpio$GPIO_WriteLow$71       stm8s_gpio
+     000080FE  Sstm8s_gpio$GPIO_WriteLow$72       stm8s_gpio
+     00008100  A$stm8s_gpio$381                   stm8s_gpio
+     00008101  A$stm8s_gpio$382                   stm8s_gpio
+     00008103  A$stm8s_gpio$384                   stm8s_gpio
+     00008105  A$stm8s_gpio$385                   stm8s_gpio
+     00008106  A$stm8s_gpio$387                   stm8s_gpio
+     00008108  A$stm8s_gpio$389                   stm8s_gpio
+     00008109  A$stm8s_gpio$395                   stm8s_gpio
+     00008109  Sstm8s_gpio$GPIO_WriteLow$73       stm8s_gpio
+     0000810A  A$stm8s_gpio$399                   stm8s_gpio
+     0000810A  Sstm8s_gpio$GPIO_WriteLow$74       stm8s_gpio
+     0000810A  Sstm8s_gpio$GPIO_WriteLow$75       stm8s_gpio
+     0000810A  XG$GPIO_WriteLow$0$0               stm8s_gpio
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                00008024    0000011E =         286. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000810B  A$stm8s_gpio$414                   stm8s_gpio
+     0000810B  Sstm8s_gpio$GPIO_WriteLow$76       stm8s_gpio
+     0000810B  Sstm8s_gpio$GPIO_WriteReverse$77   stm8s_gpio
+     0000810B  Sstm8s_gpio$GPIO_WriteReverse$78   stm8s_gpio
+     0000810B  Sstm8s_gpio$GPIO_WriteReverse$79   stm8s_gpio
+     0000810B  _GPIO_WriteReverse                 stm8s_gpio
+     0000810D  A$stm8s_gpio$416                   stm8s_gpio
+     0000810E  A$stm8s_gpio$418                   stm8s_gpio
+     00008110  A$stm8s_gpio$420                   stm8s_gpio
+     00008111  A$stm8s_gpio$428                   stm8s_gpio
+     00008111  Sstm8s_gpio$GPIO_WriteReverse$80   stm8s_gpio
+     00008111  Sstm8s_gpio$GPIO_WriteReverse$81   stm8s_gpio
+     00008111  XG$GPIO_WriteReverse$0$0           stm8s_gpio
+     00008112  A$stm8s_gpio$443                   stm8s_gpio
+     00008112  Sstm8s_gpio$GPIO_ReadOutputData$   stm8s_gpio
+     00008112  Sstm8s_gpio$GPIO_ReadOutputData$   stm8s_gpio
+     00008112  Sstm8s_gpio$GPIO_ReadOutputData$   stm8s_gpio
+     00008112  Sstm8s_gpio$GPIO_WriteReverse$82   stm8s_gpio
+     00008112  _GPIO_ReadOutputData               stm8s_gpio
+     00008114  A$stm8s_gpio$445                   stm8s_gpio
+     00008115  A$stm8s_gpio$454                   stm8s_gpio
+     00008115  Sstm8s_gpio$GPIO_ReadOutputData$   stm8s_gpio
+     00008115  Sstm8s_gpio$GPIO_ReadOutputData$   stm8s_gpio
+     00008115  XG$GPIO_ReadOutputData$0$0         stm8s_gpio
+     00008116  A$stm8s_gpio$469                   stm8s_gpio
+     00008116  Sstm8s_gpio$GPIO_ReadInputData$8   stm8s_gpio
+     00008116  Sstm8s_gpio$GPIO_ReadInputData$9   stm8s_gpio
+     00008116  Sstm8s_gpio$GPIO_ReadInputData$9   stm8s_gpio
+     00008116  Sstm8s_gpio$GPIO_ReadOutputData$   stm8s_gpio
+     00008116  _GPIO_ReadInputData                stm8s_gpio
+     00008118  A$stm8s_gpio$472                   stm8s_gpio
+     0000811A  A$stm8s_gpio$481                   stm8s_gpio
+     0000811A  Sstm8s_gpio$GPIO_ReadInputData$9   stm8s_gpio
+     0000811A  Sstm8s_gpio$GPIO_ReadInputData$9   stm8s_gpio
+     0000811A  XG$GPIO_ReadInputData$0$0          stm8s_gpio
+     0000811B  A$stm8s_gpio$496                   stm8s_gpio
+     0000811B  Sstm8s_gpio$GPIO_ReadInputData$9   stm8s_gpio
+     0000811B  Sstm8s_gpio$GPIO_ReadInputPin$95   stm8s_gpio
+     0000811B  Sstm8s_gpio$GPIO_ReadInputPin$96   stm8s_gpio
+     0000811B  Sstm8s_gpio$GPIO_ReadInputPin$97   stm8s_gpio
+     0000811B  _GPIO_ReadInputPin                 stm8s_gpio
+     0000811D  A$stm8s_gpio$499                   stm8s_gpio
+     0000811F  A$stm8s_gpio$501                   stm8s_gpio
+     00008121  A$stm8s_gpio$510                   stm8s_gpio
+     00008121  Sstm8s_gpio$GPIO_ReadInputPin$98   stm8s_gpio
+     00008121  Sstm8s_gpio$GPIO_ReadInputPin$99   stm8s_gpio
+     00008121  XG$GPIO_ReadInputPin$0$0           stm8s_gpio
+     00008122  A$stm8s_gpio$522                   stm8s_gpio
+     00008122  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008122  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008122  Sstm8s_gpio$GPIO_ReadInputPin$10   stm8s_gpio
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                00008024    0000011E =         286. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008122  _GPIO_ExternalPullUpConfig         stm8s_gpio
+     00008123  A$stm8s_gpio$527                   stm8s_gpio
+     00008123  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008123  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008125  A$stm8s_gpio$529                   stm8s_gpio
+     00008128  A$stm8s_gpio$531                   stm8s_gpio
+     00008129  A$stm8s_gpio$535                   stm8s_gpio
+     00008129  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     0000812B  A$stm8s_gpio$536                   stm8s_gpio
+     0000812D  A$stm8s_gpio$537                   stm8s_gpio
+     00008130  A$stm8s_gpio$543                   stm8s_gpio
+     00008130  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008130  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008132  A$stm8s_gpio$545                   stm8s_gpio
+     00008133  A$stm8s_gpio$548                   stm8s_gpio
+     00008133  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008136  A$stm8s_gpio$555                   stm8s_gpio
+     00008136  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008136  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008137  A$stm8s_gpio$557                   stm8s_gpio
+     00008137  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008139  A$stm8s_gpio$558                   stm8s_gpio
+     0000813A  A$stm8s_gpio$559                   stm8s_gpio
+     0000813C  A$stm8s_gpio$560                   stm8s_gpio
+     0000813D  A$stm8s_gpio$563                   stm8s_gpio
+     0000813D  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     0000813F  A$stm8s_gpio$565                   stm8s_gpio
+     00008140  A$stm8s_gpio$572                   stm8s_gpio
+     00008140  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008140  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008141  A$stm8s_gpio$576                   stm8s_gpio
+     00008141  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008141  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+     00008141  XG$GPIO_ExternalPullUpConfig$0$0   stm8s_gpio
+     00008142  Sstm8s_gpio$GPIO_ExternalPullUpC   stm8s_gpio
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_line                         00000000    00000352 =         850. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_loc                          00000000    00000240 =         576. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_abbrev                       00000000    000000ED =         237. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_info                         00000000    0000048F =        1167. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_pubnames                     00000000    00000102 =         258. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_frame                        00000000    000002B0 =         688. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+
+Files Linked                              [ module(s) ]
+
+./build/main.rel                          [ main ]
+./build/stm8s_gpio.rel                    [ stm8s_gpio ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+
+User Base Address Definitions
+
+HOME = 0x8000
+DATA = 0x0001
+SSEG = 0xffffffff
+
+
