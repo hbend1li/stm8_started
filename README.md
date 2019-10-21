@@ -29,7 +29,7 @@ Here are the required tools that I used in this tutorial:
 
 ```shell
 # Arch linux
-$ yaourt -S visual-studio-code-bin
+$ sudo pacman -S community/code
 
 # Ubuntu linux 
 $ wget https://go.microsoft.com/fwlink/?LinkID=760868
@@ -89,7 +89,7 @@ Install **openocd** from **aur/openocd-git** for latest update to use **STM8** d
 
 ```shell
 # Arch linux 
-$ yaourt -S aur/openocd-git
+$ sudo pacman -S community/openocd
 
 # Ubuntu linux 
 $ sudo apt install openocd
@@ -143,7 +143,32 @@ For the programmer, you need one that support SWIM (Single Wire Interface Module
 >
 > Black Magic Probe, Open Source JTAG & SWD GNU Debugger and Programmer [here](https://github.com/blacksphere/blackmagic/wiki) and [here](https://embdev.net/articles/STM_Discovery_as_Black_Magic_Probe)
 
+#### udev
+Linux users have to install udev rules for supported st-link programmer.
 
+```shell
+sudo nano /etc/udev/rules.d/49-stlink.rules
+
+# STLink v1
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3744", MODE="0666"
+
+# STLink v2
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE="0666"
+
+# STLink v2-1
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE="0666"
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3752", MODE="0666"
+
+# STLink v3 in usbloader mode and standard (debug) mode
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374d", MODE="0666"
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374e", MODE="0666"
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374f", MODE="0666"
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3753", MODE="0666"
+```
+save and exit, then reload udevadm
+```shell
+$ sudo udevadm control --reload-rules && sudo udevadm trigger
+```
 
 #### STM8FLASH
 
