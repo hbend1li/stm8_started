@@ -170,6 +170,17 @@ save and exit, then reload udevadm
 $ sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
+Ubuntu/Debian users may need to add own “username” to the “dialout” group if they are not “root”, doing this issuing
+```shell
+sudo usermod -a -G dialout $USER
+sudo usermod -a -G plugdev $USER
+```
+Arch users may need to add their user to the “uucp” group
+```shell
+$ sudo usermod -a -G uucp $USER
+$ sudo usermod -a -G lock $USER
+```
+
 #### STM8FLASH
 
 it was the only program that's able to communicate through the SWIM interface of ST-LINKs to upload compiled code ( Firmware ) into the micro-controller.
