@@ -71,6 +71,122 @@ SDCC supports STM8, but for licensing reasons (booo, ST!), the [Standard Periphe
 
 Someone developed a patch that makes the SPL compatible with SDCC, available here: [SPL_2.2.0_SDCC_patch](https://github.com/gicking/SPL_2.2.0_SDCC_patch). There's an AUR package that attempts to install it in the SDCC libraries folder ([aur/stm8-spl-sdcc](https://aur.archlinux.org/packages/stm8-spl-sdcc/)), but alas the zip with the SPL files is login & EULA-click protected (booo again, ST!).
 
+### Programmer
+
+#### ST-Link
+
+![ST-LINK-V2.jpg](https://ucarecdn.com/6fc8728f-72fd-42fb-befd-2dd6b3a3d141/)
+
+ST-Link programmer or clone used to write your compiled code ( Firmware ) into the micro-controller.
+For the programmer, you need one that support SWIM (Single Wire Interface Module) mode. You can (recommended) go with the original debugger of STMicroelectronics which is ST-Link V2 (you can get this one second hand as low as 20$) or if you are really want to go economical, you can get away with the fake ones wich cost you under 10$ (please note that these cheap debuggers only support software mode, which works fine, and do not give you full functionality and speed of the genuine debuggers of ST itself). or you can build your own Open source Stlink Tools.
+
+> ST-LINK/V2-1 firmware upgrade [STSW-LINK007](https://www.st.com/en/development-tools/stsw-link007.html). 
+>
+> Open source version of the STMicroelectronics Stlink Tools [here](https://github.com/texane/stlink) 
+>
+> Black Magic Probe, Open Source JTAG & SWD GNU Debugger and Programmer [here](https://github.com/blacksphere/blackmagic/wiki) and [here](https://embdev.net/articles/STM_Discovery_as_Black_Magic_Probe)
+
+#### STM8FLASH
+
+it was the only program that's able to communicate through the SWIM interface of ST-LINKs to upload compiled code ( Firmware ) into the micro-controller.
+
+> **libusb-1.0-0-dev** is required to compile stm8flash
+
+Install **stm8flash** from [AUR]  package
+
+```shell
+## Arch linux 
+$ yaourt -S aur/stm8flash-git
+
+## Ubuntu, Mint Linux
+## Install from src git repo
+$ git clone https://github.com/vdudouyt/stm8flash.git
+$ cd stm8flash
+$ make
+$ sudo make install
+```
+
+> GitHub opensource software distributed on [vdudouyt/stm8flash](https://github.com/vdudouyt/stm8flash)
+
+#### USB Troubleshooting
+
+To solve USB device acquring write access problem
+
+> libusb: error [_get_usbfs_fd] libusb couldn't open USB device /dev/bus/usb/003/004: Permission denied
+> libusb: error [_get_usbfs_fd] libusb requires write access to USB device nodes.
+> Could not open USB device.
+
+create files with content:
+
+##### 49-stlinkv1.rules
+
+```shell
+# stm32 discovery boards, with onboard st/linkv1
+# ie, STM32VL.
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3744", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv1_%n"
+```
+
+##### 49-stlinkv2.rules
+
+```shell
+# stm32 discovery boards, with onboard st/linkv2
+# ie, STM32L, STM32F4.
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv2_%n"
+```
+
+##### 49-stlinkv2-1.rules
+
+```shell
+# stm32 nucleo boards, with onboard st/linkv2-1
+# ie, STM32F0, STM32F4.
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv2-1_%n"
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3752", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv2-1_%n"
+```
+
+##### 49-stlinkv3.rules
+
+```shell
+# stlink-v3 boards (standalone and embedded) in usbloader mode and standard (debug) mode
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374d", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv3loader_%n"
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374e", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv3_%n"
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374f", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv3_%n"
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3753", \
+    MODE="660", GROUP="plugdev", TAG+="uaccess", \
+    SYMLINK+="stlinkv3_%n"
+```
+
+Create **49-stlinkv1.rules**, **49-stlinkv2.rules**, **49-stlinkv2-1.rules**, **49-stlinkv3.rules** and copy it in **/etc/udev/rules.d/**, Then reload **udevadm**
+
+```shell
+$ sudo cp *.rules /etc/udev/rules.d/
+$ sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
+> Note that a file is provided for ST-Link/V1 (idProduct=3744) despite most toolsets do not support it.
+
+
 ### GDB Debugger
 
 ![gdb.png](https://ucarecdn.com/e35b3b8f-1ade-47fb-b0f4-7f2780c826c0/)
@@ -120,43 +236,6 @@ $ sudo make install
 
 > SourceForge [stm8-binutils-gdb](https://stm8-binutils-gdb.sourceforge.io).
 
-### Programmer
-
-#### ST-Link
-
-![ST-LINK-V2.jpg](https://ucarecdn.com/6fc8728f-72fd-42fb-befd-2dd6b3a3d141/)
-
-ST-Link programmer or clone used to write your compiled code ( Firmware ) into the micro-controller.
-For the programmer, you need one that support SWIM (Single Wire Interface Module) mode. You can (recommended) go with the original debugger of STMicroelectronics which is ST-Link V2 (you can get this one second hand as low as 20$) or if you are really want to go economical, you can get away with the fake ones wich cost you under 10$ (please note that these cheap debuggers only support software mode, which works fine, and do not give you full functionality and speed of the genuine debuggers of ST itself). or you can build your own Open source Stlink Tools.
-
-> ST-LINK/V2-1 firmware upgrade [STSW-LINK007](https://www.st.com/en/development-tools/stsw-link007.html). 
->
-> Open source version of the STMicroelectronics Stlink Tools [here](https://github.com/texane/stlink) 
->
-> Black Magic Probe, Open Source JTAG & SWD GNU Debugger and Programmer [here](https://github.com/blacksphere/blackmagic/wiki) and [here](https://embdev.net/articles/STM_Discovery_as_Black_Magic_Probe)
-
-#### STM8FLASH
-
-it was the only program that's able to communicate through the SWIM interface of ST-LINKs to upload compiled code ( Firmware ) into the micro-controller.
-
-> **libusb-1.0-0-dev** is required to compile stm8flash
-
-Install **stm8flash** from [AUR]  package
-
-```shell
-## Arch linux 
-$ yaourt -S aur/stm8flash-git
-
-## Ubuntu, Mint Linux
-## Install from src git repo
-$ git clone https://github.com/vdudouyt/stm8flash.git
-$ cd stm8flash
-$ make
-$ sudo make install
-```
-
-> GitHub opensource software distributed on [vdudouyt/stm8flash](https://github.com/vdudouyt/stm8flash)
-
 ### ST’s STM8 Discovery
 
 The STM8S-DISCOVERY helps you to discover the STM8S features and to develop and share your own application. In my case i use STM8S003F3P6 STM8S Minimum System Development Board Module. It's about $1-$5 from [AliExpress](https://www.aliexpress.com/item/New-STM8S003F3P6-STM8S-Minimum-System-Development-Board-Module-SWIM-Debug-20pin/32844169947.html) 
@@ -171,26 +250,37 @@ Usually the first step toward learning development on a micro-controller is  s
 
 At this point you should have a working dev environment and can start experimenting with the board.
 
-[STM8S Reference Manual](https://www.st.com/content/ccc/resource/technical/document/reference_manual/9a/1b/85/07/ca/eb/4f/dd/CD00190271.pdf/files/CD00190271.pdf/jcr:content/translations/en.CD00190271.pdf) 
+[STM8S Reference Manual](https://www.st.com/content/ccc/resource/technical/document/reference_manual/9a/1b/85/07/ca/eb/4f/dd/CD00190271.pdf/files/CD00190271.pdf/jcr:content/translations/en.CD00190271.pdf)
 
-**stm8_blinky.c**
+##### stm8_blinky.c
 
 ```c
 #include "stm8l.h"
-int main() 
+
+#define Led_Init GPIO_Init(GPIOD, GPIO_PIN_1, GPIO_MODE_OUT_PP_LOW_FAST)
+#define Led_ON   GPIO_WriteHigh    (GPIOD,GPIO_PIN_1)
+#define Led_OFF  GPIO_WriteLow     (GPIOD,GPIO_PIN_1)
+#define Led_TOG  GPIO_WriteReverse (GPIOD,GPIO_PIN_1)
+
+void main(void) 
 {
-   int d,c;
-   // Configure pins
-   PD_DDR = 0x01;
-   PD_CR1 = 0x01;
+
+   // Init LED Port, Pin
+   Led_Init;
+
+   // Set LED ON
+   Led_ON;
+
    // Loop
-   do {
-        PD_ODR ^= 0x01;
-        for(d = 0; d<19000; d++) 
-        { 
-           for(c = 0; c<5; c++) ;
-        }
-      } while(1);
+   while(1){
+      // Toggle LED ON/OFF
+      Led_TOG;
+
+      // White moment
+      for(uint16_t d = 0; d<19000; d++){
+         for(uint8_t c = 0; c<5; c++);
+      }
+   }
 }
 ```
 
