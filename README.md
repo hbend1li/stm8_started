@@ -13,8 +13,8 @@ Here are the required tools that I used in this tutorial:
 - **VS-Code** ( Visual Studio Code ) advanced text editor.
 - **SDCC** Compiler v3.5.0 or higher.
 - **STM8 Standard Peripherals Library [SPL]**, patched for SDCC. 
-- **STM8-GDB / OPENOCD** for debugging.
 - **ST-LINK / STM8FLASH** to write your compiled code into the micro-controller.
+- **STM8-GDB / OPENOCD** for debugging.
 - **ST’s STM8 Evaluation board** or you can get away with el-cheapo chinese boards which are going for around 2$ including shipping!.
 
 ## Prepare required tools
