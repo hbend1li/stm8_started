@@ -186,56 +186,6 @@ $ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 > Note that a file is provided for ST-Link/V1 (idProduct=3744) despite most toolsets do not support it.
 
-
-### GDB Debugger
-
-![gdb.png](https://ucarecdn.com/e35b3b8f-1ade-47fb-b0f4-7f2780c826c0/)
-GDB offers extensive facilities for tracing and altering the execution of programs. The user can monitor and modify the values of programs' internal variables, and even call functions independently of the program's normal behavior.
-
-#### OpenOCD
-
-Install **openocd** from **aur/openocd-git** for latest update to use **STM8** devices   
-
-```shell
-# Arch linux 
-$ yaourt -S aur/openocd-git
-
-# Ubuntu and mint linux 
-$ sudo apt install openocd
-```
-
-> SourceForge [OpenOCD](http://openocd.org).
-
-#### STM8-GDB
-
-Download the latest stm8 binutils-gsb sources from [Official site](https://stm8-binutils-gdb.sourceforge.io/) or direct from [SourceForge](https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2018-03-04.tar.gz/download).
-              https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2018-03-04.tar.gz/download
-
-Building the binaries is basically the process of downloading the sources and applying the patches. There are helper scripts to assist with the process.
-
-Also note you need some libraries for TUI mode to work. Among those are ncursesw.
-
-To download, patch and configure:
-
-```shell
-$ wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2018-03-04.tar.gz/download -O stm8-binutils-gdb-sources-2018-03-04.tar.gz
-
-$ tar -xf stm8-binutils-gdb-sources-2018-03-04.tar.gz
-$ cd stm8-binutils-gdb-sources
-$ ./patch_binutils.sh
-$ ./configure_binutils.sh
-```
-
-Next step is the regular building and install:
-
-```shell
-$ cd binutils-2.30
-$ make
-$ sudo make install
-```
-
-> SourceForge [stm8-binutils-gdb](https://stm8-binutils-gdb.sourceforge.io).
-
 ### ST’s STM8 Discovery
 
 The STM8S-DISCOVERY helps you to discover the STM8S features and to develop and share your own application. In my case i use STM8S003F3P6 STM8S Minimum System Development Board Module. It's about $1-$5 from [AliExpress](https://www.aliexpress.com/item/New-STM8S003F3P6-STM8S-Minimum-System-Development-Board-Module-SWIM-Debug-20pin/32844169947.html) 
@@ -328,9 +278,58 @@ Bytes written: 655
 
 ## Advenced
 
+### GDB Debugger
+
+![gdb.png](https://ucarecdn.com/e35b3b8f-1ade-47fb-b0f4-7f2780c826c0/)
+GDB offers extensive facilities for tracing and altering the execution of programs. The user can monitor and modify the values of programs' internal variables, and even call functions independently of the program's normal behavior.
+
+#### OpenOCD
+
+Install **openocd** from **[github.com/sysprogs/openocd](https://github.com/sysprogs/openocd)** for latest update to use **STM8** devices
+
+```shell
+$ git clone git@github.com:sysprogs/openocd.git
+or
+$ git clone git@github.com:ntfreak/openocd.git
+$ cd openocd
+$ ./bootstrap
+$ ./configure
+$ make
+$ sudo make install
+```
+
+> SourceForge [OpenOCD](http://openocd.org).
+
+#### STM8-GDB
+
+Download the latest stm8 binutils-gsb sources from [Official site](https://stm8-binutils-gdb.sourceforge.io/) or direct from [SourceForge](https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2018-03-04.tar.gz/download).
+
+Building the binaries is basically the process of downloading the sources and applying the patches. There are helper scripts to assist with the process.
+
+```shell
+$ wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2018-03-04.tar.gz/download -O stm8-binutils-gdb-sources-2018-03-04.tar.gz
+
+$ tar -xf stm8-binutils-gdb-sources-2018-03-04.tar.gz
+$ cd stm8-binutils-gdb-sources
+$ ./patch_binutils.sh
+$ ./configure_binutils.sh
+```
+
+> Also note you need some libraries for TUI mode to work. Among those are ncursesw.
+
+Next step is the regular building and install:
+
+```shell
+$ cd binutils-2.30
+$ make
+$ sudo make install
+```
+
+> SourceForge [stm8-binutils-gdb](https://stm8-binutils-gdb.sourceforge.io).
+
 ### Debug
 
-Compiling with sdcc and debug info:
+Compiling and generate **elf** file with **--out-fmt-elf** arg
 
 ```shell
 $ sdcc -mstm8 led.c --out-fmt-elf --all-callee-saves --debug --verbose --stack-auto --fverbose-asm  --float-reent --no-peep
@@ -339,7 +338,7 @@ $ sdcc -mstm8 led.c --out-fmt-elf --all-callee-saves --debug --verbose --stack-a
 launch openocd in a second shell:
 
 ```shell
-$ openocd -f /usr/share/openocd/scripts/interface/stlink.cfg -f /usr/share/openocd/scripts/target/stm8s105.cfg -c "init" -c "reset halt"
+$ openocd -f interface/stlink.cfg -f target/stm8s105.cfg -c "init" -c "reset halt"
 ```
 
 or if you prefer the generic stm8s configuration (for medium size flash stm8s) replace **stm8s105.cfg** by **stm8s.cfg**
@@ -362,3 +361,41 @@ load
 break main
 continue
 ```
+
+### Debuging in VSCode
+
+#### Setting
+
+Goto [Debug > Add Confeguration ...]
+
+```json
+{
+    "name": "STM8-gdb",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "${workspaceRoot}/build/main.elf",
+    "args": [],
+    "stopAtEntry": true,
+    "cwd": "${workspaceRoot}",
+    "environment": [],
+    "externalConsole": false,
+    "MIMode": "gdb",
+    "miDebuggerPath": "stm8-gdb",
+    "setupCommands": [
+        {
+            "description": "connect to target",
+            "text": "-target-select extended-remote localhost:3333",
+            "ignoreFailures": true
+        },
+    ],
+    "logging": {
+        "moduleLoad": true,
+        "trace": true,
+        "engineLogging": true,
+        "programOutput": true,
+        "exceptions": true
+    },
+}
+```
+
+Then [Debug > Start Debugging] or press **F5**
