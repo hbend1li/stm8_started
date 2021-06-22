@@ -11,7 +11,7 @@ STM8 Series of micro-controllers by ST Microelectronics are dirt cheap and power
 Here are the required tools that I used in this tutorial:
 
 - **VS-Code** ( Visual Studio Code ) advanced text editor.
-- **SDCC** Compiler v3.5.0 or higher.
+- **SDCC** Compiler v3.7.0 or higher.
 - **STM8 Standard Peripherals Library [SPL]**, patched for SDCC. 
 - **ST-LINK / STM8FLASH** to write your compiled code into the micro-controller.
 - **STM8-GDB / OPENOCD** for debugging.
@@ -51,13 +51,14 @@ press ( Ctrl + Shift + X ) then search and install the folowing extention:
 
 ### Install SDCC
 
-Download and install SDCC Snapshot Builds for more optimisation from [SourceForge](http://sourceforge.net/projects/sdcc/files/snapshot_builds/amd64-unknown-linux2.5/sdcc-snapshot-amd64-unknown-linux2.5-20200113-11515.tar.bz2/download)
+SDCC is a retargettable, optimizing Standard C (ANSI C89, ISO C99, ISO C11) compiler suite that targets the STMicroelectronics STM8.  
+Download and install SDCC v3.7.0 or higher. Snapshot Builds for more optimisation from [SourceForge](https://sourceforge.net/projects/sdcc/files/snapshot_builds/amd64-unknown-linux2.5/)
 
 ```shell
 # download the latest version
-$ wget https://sourceforge.net/projects/sdcc/files/snapshot_builds/amd64-unknown-linux2.5/sdcc-snapshot-amd64-unknown-linux2.5-20200113-11515.tar.bz2
+$ wget https://sourceforge.net/projects/sdcc/files/snapshot_builds/amd64-unknown-linux2.5/sdcc-snapshot-amd64-unknown-linux2.5-20210621-12488.tar.bz2
 
-$ tar -xjf ./sdcc-snapshot-amd64-unknown-linux2.5-20200113-11515.tar.bz2
+$ tar -xjf ./sdcc-snapshot-amd64-unknown-linux2.5-20210621-12488.tar.bz2
 $ cd sdcc
 $ sudo cp -r * /usr/local
 ```
