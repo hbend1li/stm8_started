@@ -55,12 +55,20 @@ SDCC is a retargettable, optimizing Standard C (ANSI C89, ISO C99, ISO C11) comp
 Download and install SDCC v3.7.0 or higher. Snapshot Builds for more optimisation from [SourceForge](https://sourceforge.net/projects/sdcc/files/snapshot_builds/amd64-unknown-linux2.5/)
 
 ```shell
-# download the latest version
+## download the latest version
 $ wget https://sourceforge.net/projects/sdcc/files/snapshot_builds/amd64-unknown-linux2.5/sdcc-snapshot-amd64-unknown-linux2.5-20210621-12488.tar.bz2
 
 $ tar -xjf ./sdcc-snapshot-amd64-unknown-linux2.5-20210621-12488.tar.bz2
-$ cd sdcc
-$ sudo cp -r * /usr/local
+$ sudo mv sdcc /opt
+$ echo "export PATH=\$PATH:/opt/sdcc/bin" >> ~/.bashrc
+$ source ~/.bashrc
+
+## to check if sdcc is correctly installed
+$ sdcc -v
+
+SDCC : mcs51/z80/z180/r2k/r2ka/r3ka/gbz80/tlcs90/ez80_z80/z80n/ds390/pic16/pic14/TININative/ds400/hc08/s08/stm8/pdk13/pdk14/pdk15 4.1.6 #12488 (Linux)
+published under GNU General Public License (GPL)
+
 ```
 
 > [SDCC](http://sdcc.sourceforge.net) SourceForge
@@ -70,7 +78,7 @@ $ sudo cp -r * /usr/local
 
 SDCC supports STM8, but for licensing reasons (booo, ST!), the [Standard Peripheral Library (SPL)](https://my.st.com/content/my_st_com/en/products/embedded-software/mcus-embedded-software/stm8-embedded-software/stsw-stm8069.html) is missing.
 
-Someone developed a patch that makes the SPL compatible with SDCC, available here: [SPL_2.2.0_SDCC_patch](https://github.com/gicking/SPL_2.2.0_SDCC_patch). There's an AUR package that attempts to install it in the SDCC libraries folder ([aur/stm8-spl-sdcc](https://aur.archlinux.org/packages/stm8-spl-sdcc/)), but alas the zip with the SPL files is login & EULA-click protected (booo again, ST!).
+Someone developed a patch that makes the SPL compatible with SDCC, available here: [SPL_2.2.0_SDCC_patch](https://github.com/gicking/SPL_2.2.0_SDCC_patch).  
 
 ### Programmer
 
@@ -85,7 +93,7 @@ For the programmer, you need one that support SWIM (Single Wire Interface Module
 >
 > Open source version of the STMicroelectronics Stlink Tools [here](https://github.com/texane/stlink) 
 >
-> Black Magic Probe, Open Source JTAG & SWD GNU Debugger and Programmer [here](https://github.com/blacksphere/blackmagic/wiki) and [here](https://embdev.net/articles/STM_Discovery_as_Black_Magic_Probe)
+> Black Magic Probe, Open Source JTAG & SWD GNU Debugger and Programmer [here](https://github.com/blacksphere/blackmagic/wiki) .
 
 #### STM8FLASH
 
@@ -181,7 +189,7 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3753", \
 Create **49-stlinkv1.rules**, **49-stlinkv2.rules**, **49-stlinkv2-1.rules**, **49-stlinkv3.rules** and copy it in **/etc/udev/rules.d/**, Then reload **udevadm**
 
 ```shell
-$ sudo cp *.rules /etc/udev/rules.d/
+$ sudo mv *.rules /etc/udev/rules.d/
 $ sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
