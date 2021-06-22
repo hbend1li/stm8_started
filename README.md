@@ -2,7 +2,7 @@
 
 > This guide was written for (and on) **Linux Arch, Ubuntu, Mint**. I have not tested the procedure on other Linux architectures or distros, Users of other distros may find that some of the instructions don't work verbatim. Adapt as needed.
 
-![stm8s003.png](https://ucarecdn.com/13ccc1fa-51d9-466d-97e8-737d95845352/)
+![stm8s003.png](assets/img/stm8.png)
 
 ## Introduction
 
@@ -20,6 +20,9 @@ Here are the required tools that I used in this tutorial:
 ## Prepare required tools
 
 ### Install VS-Code
+
+![VS-Code](assets/img/vscode_ide.png)
+
 
 [Visual Studio Code](https://code.visualstudio.com/) is a cross-platform, free and open-source (licensed under the MIT License) text editor developed by Microsoft and is extensible using extensions, which can be browsed from within the text editor itself (via its extension gallery) or from <https://marketplace.visualstudio.com/VSCode>. While open-source, a proprietary build (licensed under an End-User License Agreement) provided by Microsoft is available and used as the basis for the [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) [**AUR**] package (for an explanation of the mixed licensing, see this GitHub [comment](https://github.com/Microsoft/vscode/issues/60#issuecomment-161792005)).
 
@@ -84,7 +87,7 @@ Someone developed a patch that makes the SPL compatible with SDCC, available her
 
 #### ST-Link
 
-![ST-LINK-V2.jpg](https://ucarecdn.com/6fc8728f-72fd-42fb-befd-2dd6b3a3d141/)
+![ST-LINK-V2.jpg](assets/img/st-link_v2.png)
 
 ST-Link programmer or clone used to write your compiled code ( Firmware ) into the micro-controller.
 For the programmer, you need one that support SWIM (Single Wire Interface Module) mode. You can (recommended) go with the original debugger of STMicroelectronics which is ST-Link V2 (you can get this one second hand as low as 20$) or if you are really want to go economical, you can get away with the fake ones wich cost you under 10$ (please note that these cheap debuggers only support software mode, which works fine, and do not give you full functionality and speed of the genuine debuggers of ST itself). or you can build your own Open source Stlink Tools.
@@ -199,12 +202,13 @@ $ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 The STM8S-DISCOVERY helps you to discover the STM8S features and to develop and share your own application. In my case i use STM8S003F3P6 STM8S Minimum System Development Board Module. It's about $1-$5 from [AliExpress](https://www.aliexpress.com/item/New-STM8S003F3P6-STM8S-Minimum-System-Development-Board-Module-SWIM-Debug-20pin/32844169947.html) 
 
-![STM8S003F3P6.jpg](https://ucarecdn.com/943d0c4f-f576-44f8-b17c-8a5eab576fa3/)
+![STM8S003F3P6.jpg](assets/img/STM8S003F3P6.jpg)
 
 ## Get Started
 
 ### Your first code </>
 
+![main](assets/img/main.png)
 Usually the first step toward learning development on a micro-controller is  simply blinking a LED, as an analog to “Hello, world!” example used on PC programming languages. This time we will have a look into how to start programming and development on STMicroelectronics STM8 series of micro-controllers.
 
 At this point you should have a working dev environment and can start experimenting with the board.
@@ -289,7 +293,7 @@ Bytes written: 655
 
 ### GDB Debugger
 
-![gdb.png](https://ucarecdn.com/e35b3b8f-1ade-47fb-b0f4-7f2780c826c0/)
+![gdb.png](assets/img/gdb.png)  
 GDB offers extensive facilities for tracing and altering the execution of programs. The user can monitor and modify the values of programs' internal variables, and even call functions independently of the program's normal behavior.
 
 #### OpenOCD
@@ -408,3 +412,5 @@ Goto [Debug > Add Confeguration ...]
 ```
 
 Then [Debug > Start Debugging] or press **F5**
+
+![debug](assets/img/debug.png)
