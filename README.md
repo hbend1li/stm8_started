@@ -316,9 +316,9 @@ Download the latest stm8 binutils-gsb sources from [Official site](https://stm8-
 Building the binaries is basically the process of downloading the sources and applying the patches. There are helper scripts to assist with the process.
 
 ```shell
-$ wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2018-03-04.tar.gz/download -O stm8-binutils-gdb-sources-2018-03-04.tar.gz
+$ wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2020-03-22.tar.gz/download -O stm8-binutils-gdb-sources-2018-03-04.tar.gz
 
-$ tar -xf stm8-binutils-gdb-sources-2018-03-04.tar.gz
+$ tar -xf stm8-binutils-gdb-sources-2020-03-22.tar.gz
 $ cd stm8-binutils-gdb-sources
 $ ./patch_binutils.sh
 $ ./configure_binutils.sh
